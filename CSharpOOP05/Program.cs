@@ -42,6 +42,31 @@
             // without affecting the original object, such as copying a Person with an Address.
 
             #endregion
+
+            #region Q3  Static Members
+
+            // a) What is a static field, and how is it different from an instance field?
+            // A static field belongs to the class itself and has only one shared copy for all objects.
+            // An instance field belongs to a specific object, so each object has its own copy.
+
+            // b) What is a static method? Can a static method directly access instance members?
+            // A static method belongs to the class rather than to a specific object.
+            // A static method cannot directly access instance members because it is not associated with a specific object.
+            // It can access instance members through an object reference.
+
+            // c) What is a static constructor, and when is it executed?
+            // A static constructor is used to initialize static members of a class.
+            // It has no access modifier and no parameters.
+            // It is executed automatically by the runtime before the type is first used or its static members are accessed.
+            // It is executed only once.
+
+            // d) What is a static class? Can you create an object from a static class?
+            // A static class is a class that cannot be instantiated and can contain only static members.
+            // No, you cannot create an object from a static class.
+            // Static classes are accessed directly through the class name.
+
+            #endregion
+
             #endregion
         }
     }
