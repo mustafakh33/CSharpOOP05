@@ -17,6 +17,13 @@ namespace CSharpOOP05.@class
         {
             get => _totalShipmentsCreated;
         }
+        // Static constructor to initialize static field
+        static Shipment()
+        {
+            _totalShipmentsCreated = 0;
+
+            Console.WriteLine("Shipment System Initialized");
+        }
 
         // Constructor that receives only trackingCode and uses defaults
         public Shipment(string trackingCode): this( trackingCode,"Unknown",1,50,new DeliveryAddress())

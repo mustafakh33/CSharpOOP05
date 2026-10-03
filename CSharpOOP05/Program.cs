@@ -204,13 +204,45 @@ namespace CSharpOOP05
             #endregion
 
             #region Q4  Static Field
+            //StandardShipment shipment1 = new StandardShipment(
+            //    "SH001",
+            //    "Laptop",
+            //    3m,
+            //    50m,
+            //    new DeliveryAddress("Cairo", "Nasr City", 10)
+            // );
+
+            //ExpressShipment shipment2 = new ExpressShipment(
+            //    "SH002",
+            //    "Phone",
+            //    2m,
+            //    70m,
+            //    new DeliveryAddress("Giza", "Dokki", 20),
+            //    30m
+            //);
+
+            //InternationalShipment shipment3 = new InternationalShipment(
+            //    "SH003",
+            //    "Monitor",
+            //    5m,
+            //    100m,
+            //    new DeliveryAddress("Cairo", "Maadi", 15),
+            //    "USA",
+            //    50m
+            //);
+            //Console.WriteLine($"Total Shipments Created: {Shipment.TotalShipmentsCreated}");
+            #endregion
+
+            #region Q5  Static Constructor
+            Console.WriteLine("Program Started");
+
             StandardShipment shipment1 = new StandardShipment(
                 "SH001",
                 "Laptop",
                 3m,
                 50m,
                 new DeliveryAddress("Cairo", "Nasr City", 10)
-             );
+            );
 
             ExpressShipment shipment2 = new ExpressShipment(
                 "SH002",
@@ -220,17 +252,6 @@ namespace CSharpOOP05
                 new DeliveryAddress("Giza", "Dokki", 20),
                 30m
             );
-
-            InternationalShipment shipment3 = new InternationalShipment(
-                "SH003",
-                "Monitor",
-                5m,
-                100m,
-                new DeliveryAddress("Cairo", "Maadi", 15),
-                "USA",
-                50m
-            );
-            Console.WriteLine($"Total Shipments Created: {Shipment.TotalShipmentsCreated}");
             #endregion
 
             #endregion
