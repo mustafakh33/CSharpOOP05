@@ -86,6 +86,26 @@
 
             #endregion
 
+            #region Q5 — Partial Classes & Partial Methods
+
+            // a) What is a Partial Class?
+            // A Partial Class is a class whose definition can be divided into multiple parts.
+            // All parts are combined by the compiler and treated as one class.
+
+            // b) Why would a developer split one class into multiple files?
+            // A developer may split a class into multiple files to keep the code organized,
+            // easier to read and maintain, and to allow multiple developers to work on different parts.
+
+            // c) What is a Partial Method?
+            // A Partial Method is a method that can be declared in one part of a partial class
+            // and implemented in another part of the same class.
+
+            // d) What happens if a declared partial method has no implementation?
+            // If a partial method has no implementation, the compiler removes the method declaration
+            // and calls to it from the compiled code, so no runtime call occurs.
+
+            #endregion
+
             #endregion
         }
     }
