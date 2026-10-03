@@ -1,4 +1,6 @@
-﻿namespace CSharpOOP05
+﻿using CSharpOOP05.@class;
+
+namespace CSharpOOP05
 {
     internal class Program
     {
@@ -104,6 +106,26 @@
             // If a partial method has no implementation, the compiler removes the method declaration
             // and calls to it from the compiled code, so no runtime call occurs.
 
+            #endregion
+
+            #endregion
+
+            #region Part 02 — Practical
+            #region Q1  Object Copying
+            Shipment shipment1 = new StandardShipment("TRK001", "Package 1", 10.5m, 25.0m, new DeliveryAddress("New York", "Main Street", 123));
+            Console.WriteLine("=== Object Copying ===");
+
+            Shipment shipment2 = shipment1;
+
+            Console.WriteLine("Reference Assignment:");
+            Console.WriteLine($"shipment1 == shipment2: {ReferenceEquals(shipment1, shipment2)}");
+
+            Shipment shipment3 = shipment1.CopyShipment();
+
+            Console.WriteLine();
+
+            Console.WriteLine("Actual Copy:");
+            Console.WriteLine($"shipment1 == shipment3: {ReferenceEquals(shipment1, shipment3)}");
             #endregion
 
             #endregion
