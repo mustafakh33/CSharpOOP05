@@ -153,54 +153,84 @@ namespace CSharpOOP05
             #endregion
 
             #region Q3  Deep Copy
+            //StandardShipment shipment1 = new StandardShipment(
+            //    "SH001",
+            //    "Laptop",
+            //    3m,
+            //    50m,
+            //    new DeliveryAddress("Cairo", "Nasr City", 10)
+            //);
+
+            //Shipment shipment2 = shipment1.DeepCopy();
+
+            //Console.WriteLine("=== Deep Copy ===");
+
+            //Console.WriteLine(
+            //    $"Same Shipment object? {ReferenceEquals(shipment1, shipment2)}"
+            //);
+
+            //Console.WriteLine(
+            //    $"Same DeliveryAddress object? " +
+            //    $"{ReferenceEquals(shipment1.Destination, shipment2.Destination)}"
+            //);
+
+            //Console.WriteLine();
+
+            //Console.WriteLine("Before change:");
+
+            //Console.WriteLine(
+            //    $"Original: {shipment1.Destination.GetFullAddress()}"
+            //);
+
+            //Console.WriteLine(
+            //    $"Copied  : {shipment2.Destination.GetFullAddress()}"
+            //);
+
+            //Console.WriteLine();
+
+            //shipment2.Destination.City = "Giza";
+            //shipment2.Destination.Street = "6th of October";
+            //shipment2.Destination.BuildingNumber = 20;
+
+            //Console.WriteLine("After changing copied address:");
+
+            //Console.WriteLine(
+            //    $"Original: {shipment1.Destination.GetFullAddress()}"
+            //);
+
+            //Console.WriteLine(
+            //    $"Copied  : {shipment2.Destination.GetFullAddress()}"
+            //);
+            #endregion
+
+            #region Q4  Static Field
             StandardShipment shipment1 = new StandardShipment(
                 "SH001",
                 "Laptop",
                 3m,
                 50m,
                 new DeliveryAddress("Cairo", "Nasr City", 10)
+             );
+
+            ExpressShipment shipment2 = new ExpressShipment(
+                "SH002",
+                "Phone",
+                2m,
+                70m,
+                new DeliveryAddress("Giza", "Dokki", 20),
+                30m
             );
 
-            Shipment shipment2 = shipment1.DeepCopy();
-
-            Console.WriteLine("=== Deep Copy ===");
-
-            Console.WriteLine(
-                $"Same Shipment object? {ReferenceEquals(shipment1, shipment2)}"
+            InternationalShipment shipment3 = new InternationalShipment(
+                "SH003",
+                "Monitor",
+                5m,
+                100m,
+                new DeliveryAddress("Cairo", "Maadi", 15),
+                "USA",
+                50m
             );
-
-            Console.WriteLine(
-                $"Same DeliveryAddress object? " +
-                $"{ReferenceEquals(shipment1.Destination, shipment2.Destination)}"
-            );
-
-            Console.WriteLine();
-
-            Console.WriteLine("Before change:");
-
-            Console.WriteLine(
-                $"Original: {shipment1.Destination.GetFullAddress()}"
-            );
-
-            Console.WriteLine(
-                $"Copied  : {shipment2.Destination.GetFullAddress()}"
-            );
-
-            Console.WriteLine();
-
-            shipment2.Destination.City = "Giza";
-            shipment2.Destination.Street = "6th of October";
-            shipment2.Destination.BuildingNumber = 20;
-
-            Console.WriteLine("After changing copied address:");
-
-            Console.WriteLine(
-                $"Original: {shipment1.Destination.GetFullAddress()}"
-            );
-
-            Console.WriteLine(
-                $"Copied  : {shipment2.Destination.GetFullAddress()}"
-            );
+            Console.WriteLine($"Total Shipments Created: {Shipment.TotalShipmentsCreated}");
             #endregion
 
             #endregion

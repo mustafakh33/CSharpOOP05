@@ -11,6 +11,12 @@ namespace CSharpOOP05.@class
         private decimal _weight;
         private decimal _deliveryFee;
         private DeliveryAddress _destination;
+        // Static field 
+        private static int _totalShipmentsCreated;
+        public static int TotalShipmentsCreated
+        {
+            get => _totalShipmentsCreated;
+        }
 
         // Constructor that receives only trackingCode and uses defaults
         public Shipment(string trackingCode): this( trackingCode,"Unknown",1,50,new DeliveryAddress())
@@ -25,6 +31,7 @@ namespace CSharpOOP05.@class
             Weight = weight;
             DeliveryFee = deliveryFee;
             Destination = destination;
+            _totalShipmentsCreated++;
         }
 
         // TrackingCode: read-only from outside, cannot be null/empty/whitespace
