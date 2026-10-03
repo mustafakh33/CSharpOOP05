@@ -123,7 +123,11 @@ namespace CSharpOOP05.@class
         {
             return (Shipment)MemberwiseClone();
         }
-
+        // Shallow Copy
+        public Shipment ShallowCopy()
+        {
+            return (Shipment)MemberwiseClone();
+        }
 
     }
 }
