@@ -129,6 +129,30 @@ namespace CSharpOOP05
             #endregion
 
             #region Q2  Shallow Copy
+            //StandardShipment shipment1 = new StandardShipment(
+            //    "SH001",
+            //    "Laptop",
+            //    3m,
+            //    50m,
+            //    new DeliveryAddress("Cairo", "Nasr City", 10)
+            //);
+            //Shipment shipment2 = shipment1.ShallowCopy();
+            //Console.WriteLine("=== Shallow Copy ===");
+            //Console.WriteLine($"Same Shipment object? {ReferenceEquals(shipment1, shipment2)}");
+
+            //Console.WriteLine();
+            //Console.WriteLine("Before modifying the copied shipment's destination:");
+            //Console.WriteLine($"Original: {shipment1.Destination.GetFullAddress()}");
+            //Console.WriteLine($"Copied  : {shipment2.Destination.GetFullAddress()}");
+
+            //shipment2.Destination.City = "Giza";
+            //Console.WriteLine();
+            //Console.WriteLine("After modifying the copied shipment's destination:");
+            //Console.WriteLine($"Original: {shipment1.Destination.GetFullAddress()}");
+            //Console.WriteLine($"Copied  : {shipment2.Destination.GetFullAddress()}");
+            #endregion
+
+            #region Q3  Deep Copy
             StandardShipment shipment1 = new StandardShipment(
                 "SH001",
                 "Laptop",
@@ -136,20 +160,47 @@ namespace CSharpOOP05
                 50m,
                 new DeliveryAddress("Cairo", "Nasr City", 10)
             );
-            Shipment shipment2 = shipment1.ShallowCopy();
-            Console.WriteLine("=== Shallow Copy ===");
-            Console.WriteLine($"Same Shipment object? {ReferenceEquals(shipment1, shipment2)}");
+
+            Shipment shipment2 = shipment1.DeepCopy();
+
+            Console.WriteLine("=== Deep Copy ===");
+
+            Console.WriteLine(
+                $"Same Shipment object? {ReferenceEquals(shipment1, shipment2)}"
+            );
+
+            Console.WriteLine(
+                $"Same DeliveryAddress object? " +
+                $"{ReferenceEquals(shipment1.Destination, shipment2.Destination)}"
+            );
 
             Console.WriteLine();
-            Console.WriteLine("Before modifying the copied shipment's destination:");
-            Console.WriteLine($"Original: {shipment1.Destination.GetFullAddress()}");
-            Console.WriteLine($"Copied  : {shipment2.Destination.GetFullAddress()}");
+
+            Console.WriteLine("Before change:");
+
+            Console.WriteLine(
+                $"Original: {shipment1.Destination.GetFullAddress()}"
+            );
+
+            Console.WriteLine(
+                $"Copied  : {shipment2.Destination.GetFullAddress()}"
+            );
+
+            Console.WriteLine();
 
             shipment2.Destination.City = "Giza";
-            Console.WriteLine();
-            Console.WriteLine("After modifying the copied shipment's destination:");
-            Console.WriteLine($"Original: {shipment1.Destination.GetFullAddress()}");
-            Console.WriteLine($"Copied  : {shipment2.Destination.GetFullAddress()}");
+            shipment2.Destination.Street = "6th of October";
+            shipment2.Destination.BuildingNumber = 20;
+
+            Console.WriteLine("After changing copied address:");
+
+            Console.WriteLine(
+                $"Original: {shipment1.Destination.GetFullAddress()}"
+            );
+
+            Console.WriteLine(
+                $"Copied  : {shipment2.Destination.GetFullAddress()}"
+            );
             #endregion
 
             #endregion

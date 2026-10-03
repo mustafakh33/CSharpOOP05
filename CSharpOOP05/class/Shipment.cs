@@ -128,6 +128,19 @@ namespace CSharpOOP05.@class
         {
             return (Shipment)MemberwiseClone();
         }
+        // Deep Copy
+        public Shipment DeepCopy()
+        {
+            Shipment copy = (Shipment)MemberwiseClone();
+
+            copy.Destination = new DeliveryAddress(
+                Destination.City,
+                Destination.Street,
+                Destination.BuildingNumber
+            );
+
+            return copy;
+        }
 
     }
 }
