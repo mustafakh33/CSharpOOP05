@@ -258,6 +258,11 @@ namespace CSharpOOP05
             Console.WriteLine($"Total Shipments Created : {Shipment.GetTotalShipmentsCreated()}");
             #endregion
 
+            #region Q7  Static Class
+            DeliveryUtilities.PrintSystemTitle();
+            DeliveryUtilities.PrintSystemTitle();
+            #endregion
+
             #endregion
         }
     }
