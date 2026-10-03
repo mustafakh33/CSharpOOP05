@@ -254,6 +254,10 @@ namespace CSharpOOP05
             );
             #endregion
 
+            #region Q6  Static Method
+            Console.WriteLine($"Total Shipments Created : {Shipment.GetTotalShipmentsCreated()}");
+            #endregion
+
             #endregion
         }
     }

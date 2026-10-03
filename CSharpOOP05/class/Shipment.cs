@@ -24,6 +24,10 @@ namespace CSharpOOP05.@class
 
             Console.WriteLine("Shipment System Initialized");
         }
+        public static int GetTotalShipmentsCreated()
+        {
+            return _totalShipmentsCreated;
+        }
 
         // Constructor that receives only trackingCode and uses defaults
         public Shipment(string trackingCode): this( trackingCode,"Unknown",1,50,new DeliveryAddress())
