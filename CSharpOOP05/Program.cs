@@ -1,4 +1,5 @@
 ﻿using CSharpOOP05.@class;
+using CSharpOOP05.ExtensionMethods;
 
 namespace CSharpOOP05
 {
@@ -261,6 +262,35 @@ namespace CSharpOOP05
             #region Q7  Static Class
             DeliveryUtilities.PrintSystemTitle();
             DeliveryUtilities.PrintSystemTitle();
+            #endregion
+
+            #region Q8   Extension Methods
+            Console.WriteLine(shipment1.GetSummary());
+
+            Console.WriteLine(shipment1.IsDelivered());
+            #endregion
+
+            #region Q9   Partial Shipment Class
+            Shipment partialShipment = new StandardShipment(
+                  "TRK-Q9",
+                  "Partial Shipment Test",
+                  10m,
+                  100m,
+                 new DeliveryAddress("Cairo", "Nasr City", 10)
+             );
+
+            Console.WriteLine($"Tracking Code: {partialShipment.TrackingCode}");
+            Console.WriteLine($"Tracking Status: {partialShipment.GetTrackingStatus()}");
+
+            partialShipment.UpdateTrackingStatus("Delivered");
+
+            Console.WriteLine($"Updated Status: {partialShipment.GetTrackingStatus()}");
+
+            #endregion
+            #region Q10  Partial Method
+            Console.WriteLine();
+            shipment1.UpdateTrackingStatus("Out For Delivery");
+            Console.WriteLine(shipment1.GetTrackingStatus());
             #endregion
 
             #endregion

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpOOP05.@class
 {
-    public abstract class Shipment
+    public abstract partial class Shipment
     {
         private string? _trackingCode;
         private string? _description;
@@ -160,5 +160,10 @@ namespace CSharpOOP05.@class
             return copy;
         }
 
+        // Partial method implementation for tracking status change
+        partial void OnTrackingStatusChanged(string newStatus)
+        {
+            Console.WriteLine($"Tracking status changed to: {newStatus}");
+        }
     }
 }
